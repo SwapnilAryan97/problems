@@ -14,6 +14,7 @@ hence (10^9)^1/2 = 10^(4.5) so we need to only traverse through only 10^5 number
 class Solution:
     def superpalindromesInRange(self, left: str, right: str) -> int:
         count = 0
+        num = []
         left, right = int(left), int(right)
         '''Odd integers'''
         for i in range(10 ** 5):
@@ -24,6 +25,7 @@ class Solution:
                 break
             if y >= left and y == int(str(y)[::-1]):
                 count = count + 1
+                num.append(y)
         '''Even integers'''
         for i in range(10 ** 5):
             s = str(i)
@@ -33,13 +35,15 @@ class Solution:
                 break
             if y >= left and y == int(str(y)[::-1]):
                 count = count + 1
-        return count
+                num.append(y)
+        return count, num
 
 
 def main():
     value = Solution()
     print(value.superpalindromesInRange('1','10')) # [1,4,9] -> 3
     print(value.superpalindromesInRange('40000000000000000', '50000000000000000'))
+    print(value.superpalindromesInRange('1', '1000'))
 
 
 if __name__ == '__main__':
