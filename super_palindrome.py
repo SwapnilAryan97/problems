@@ -41,9 +41,9 @@ class Solution:
 
 def main():
     value = Solution()
-    print(value.superpalindromesInRange('1','10')) # [1,4,9] -> 3
-    print(value.superpalindromesInRange('40000000000000000', '50000000000000000'))
-    print(value.superpalindromesInRange('1', '1000'))
+    print(value.superpalindromesInRange('1','10')) # 3, [1, 4, 9]
+    print(value.superpalindromesInRange('40000000000000000', '50000000000000000')) # 2, [40000000800000004, 40004000900040004]
+    print(value.superpalindromesInRange('1', '1000')) #5, [1, 4, 9, 121, 484]
 
 
 if __name__ == '__main__':
